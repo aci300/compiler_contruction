@@ -1,0 +1,16 @@
+
+Grammar
+
+The grammar of this language for this moment accepts just arithmatic expressions. 
+All implemented expressions return  a result. 
+
+You can have as many expressions as you want but they have to be separated by a semicolon (;) .
+White space and new lines are ignored. 
+All the results are printed at the end of the programm. 
+
+Here is the list with already implemented arithmetic operations:  
+1. Addition + 
+2. Substraction -
+3. Multiplication * 
+4. Division /
+5. Modulo   mod 
