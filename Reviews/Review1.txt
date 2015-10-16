@@ -5,10 +5,19 @@ Review for Andrew Hynes
 Good: 
 Great explanation of the grammar and the compiler is very easy to use
 
+A lot of clear  testCases written. 
 
+Good handling of errors
 
 
 
 
 
 To improve: 
+The interpreted accepts just 1 expression at a time. 
+The mainParser.ml should be modified so that the interpreted can accept as many expressions as possible
+
+Adding the feature of accepting round brackets in arithmetic expressions
+
+
+in the future the compiler should recognize the built in OCaml functions ( like if .... the ... else ; for() ; while () )
