@@ -1,4 +1,3 @@
-
 {
 
 open Parser 
@@ -33,6 +32,7 @@ rule read =
   (* | float { FLOAT (float_of_string (Lexing.lexeme lexbuf)) } *)
    | "print" { PRINT }
    | ';' { SEMICOLON }
+   | '"' { readString (Buffer.create 16) lexbuf }
    | '+' { PLUS }
    | '*' { TIMES }
    | '-' { MINUS }
