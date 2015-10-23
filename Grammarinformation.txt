@@ -1,8 +1,11 @@
 
 Grammar
 
-The grammar of this language for this moment accepts just arithmatic expressions. 
-All implemented expressions return  a result. 
+The grammar of this language for this moment accepts 2 types of statements: 
+1. arithmatic expressions. 
+2. string statments ( written between quotes) 
+
+All implemented expressions return  a result or the given string. 
 
 You can have as many expressions as you want but they have to be separated by a semicolon (;) .
 White space and new lines are ignored. 
