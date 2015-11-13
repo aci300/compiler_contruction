@@ -21,6 +21,7 @@ let print_Position outx lexbuf =
   fprintf outx "Line number :%d, Position: %d" 
     pos.pos_lnum (pos.pos_cnum - pos.pos_bol + 1)
 
+
 let parse_with_error lexbuf =
   try Parser.top Lexer.read lexbuf with
   | SyntaxError msg ->
@@ -34,7 +35,7 @@ let parse_with_error lexbuf =
 
 
 
-let rec read_to_empty buf =
+(*let rec read_to_empty buf =
     let s = read_line () in
     if s = "" then buf
     else (Buffer.add_string buf s;
@@ -46,6 +47,24 @@ let _ =
   |> Buffer.contents
   |> Lexing.from_string
   |> parse_with_error
-  |> List.map string_of_int
-  |> String.concat ";\n"
-  |> print_endline
+  |> print_string;
+    print_newline () *) 
+
+let parseFile fileName =
+  let channel = open_in fileName in
+  Lexing.from_channel channel
+  |> parse_with_error
+  |> print_string;
+  print_newline ();
+  close_in channel
+	   
+let _ =
+  if Array.length Sys.argv > 1
+  then parseFile Sys.argv.(1)
+  else (read_line ()
+       |> Lexing.from_string
+       |> parse_with_error
+       |> print_string;
+       print_newline ())
+
+
